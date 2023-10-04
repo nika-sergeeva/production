@@ -1,7 +1,8 @@
-
-
 # dependencies
 /node_modules
 
 # production
 /build
+
+/.vscode
+/.idea
