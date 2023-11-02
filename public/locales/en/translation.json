@@ -1,4 +1,8 @@
 {
-    "Тестовый пример": "Test example",
-    "Язык":"English"
+  "Тестовый пример": "Test example",
+  "Язык": "English",
+  "about": {
+    "new key": "новый ключ"
+  },
+  "Not Found": "This page does not exist"
 }
