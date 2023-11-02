@@ -5,7 +5,6 @@ const AboutPage = () => {
     const { t } = useTranslation('about');
     return (
         <div>
-            {t('new key')}
             {t('О сайте')}
         </div>
     );

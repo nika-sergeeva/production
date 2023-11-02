@@ -2,7 +2,7 @@
   "Тестовый пример": "Test example",
   "Язык": "English",
   "about": {
-    "new key": "новый ключ"
+    "новый ключ": "новый ключ"
   },
-  "Not Found": "This page does not exist"
+  "не найдена": "This page does not exist"
 }
