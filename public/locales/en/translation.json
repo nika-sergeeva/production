@@ -4,5 +4,7 @@
   "about": {
     "новый ключ": "новый ключ"
   },
-  "не найдена": "This page does not exist"
+  "не найдена": "This page does not exist",
+  "Что-то пошло нетак!": "Something went wrong.",
+  "Ошибка":"Error"
 }
