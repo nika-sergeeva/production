@@ -5,7 +5,7 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
-      matrix:
+      matrix: 
         node-version: [ 17.x ]
 
     steps:
