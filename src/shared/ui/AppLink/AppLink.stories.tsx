@@ -23,18 +23,18 @@ PrimaryDark.args = {
     children: 'Text',
     theme: AppLinkTheme.PRIMARY,
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SecondaryDark = Template.bind({});
 SecondaryDark.args = {
     children: 'Text',
     theme: AppLinkTheme.SECONDARY,
 };
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const RedDark = Template.bind({});
 RedDark.args = {
     children: 'Text',
     theme: AppLinkTheme.RED,
 };
-RedDark.decorators = [ThemeDecorator(Theme.DARK)]
+RedDark.decorators = [ThemeDecorator(Theme.DARK)];
