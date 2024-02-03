@@ -1,10 +1,10 @@
 {
   "Тестовый пример": "Test example",
   "Язык": "English",
-  "about": {
-    "новый ключ": "новый ключ"
-  },
+  "Укороченный вар": "En",
   "не найдена": "This page does not exist",
   "Что-то пошло нетак!": "Something went wrong.",
-  "Ошибка":"Error"
+  "Ошибка":"Error",
+  "Главная страница": "Main page",
+  "О сайте": "About page"
 }
