@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
-    "test:ui:json":"node scripts/generate-visual-json-report.js",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli ./.loki/current ./.loki/reference ./.loki/difference -R ./.loki/report.html"
   },
   "keywords": [],
