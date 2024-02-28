@@ -7,5 +7,7 @@
   "Ошибка":"Error",
   "Главная страница": "Main page",
   "О сайте": "About page",
-  "Лорем ипсум": "Lorem Ipsum"
+  "Лорем ипсум": "Lorem Ipsum",
+  "Форма авторизации" : "Login",
+  "Вы ввели неверный логин или пароль":"Incorrect login or password"
 }

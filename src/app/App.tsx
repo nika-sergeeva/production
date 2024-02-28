@@ -3,19 +3,23 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router/ined';
 
 const App = () => {
     const { theme } = useTheme();
+    const dispatch = useDispatch();
 
-    const [isOpen, setIsOpen] = useState(false);
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
     return (
         <div className={classNames('app', {}, [])}>
             <Suspense fallback="">
                 <Navbar />
-                <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
                 <div className="content-page">
                     <Sidebar />
                     <AppRouter />
