@@ -9,6 +9,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import cls from './Sidebar.module.scss';
+import { SidebarItemsList } from '../../model/Items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
  className?: string;
@@ -39,26 +41,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={cls.items}>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.main}
-                    className={cls.item}
-                >
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.link}>
-                        {t('Главная страница')}
-                    </span>
-                </AppLink>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.about}
-                    className={cls.item}
-                >
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.link}>
-                        {t('О сайте')}
-                    </span>
-                </AppLink>
+                {SidebarItemsList.map((i) => (
+                    <SidebarItem
+                        item={i}
+                        collapsed={collapsed}
+                    />
+                ))}
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
