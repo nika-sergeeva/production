@@ -1,7 +1,7 @@
 export {
     Profile,
-    ProfileSchema,
-} from './modal/types/profile';
+    ProfileShema,
+} from './model/types/profile';
 
 export {
     profileActions,
