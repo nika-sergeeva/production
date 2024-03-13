@@ -5,7 +5,7 @@ import {
 
 interface UseThemeResult {
     toggleTheme: () => void;
-    theme: Theme;
+    theme: Theme | undefined;
 }
 
 export function useTheme(): UseThemeResult {
@@ -28,5 +28,5 @@ export function useTheme(): UseThemeResult {
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    return { theme, toggleTheme };
+    return { theme: theme || Theme.LIGHT, toggleTheme };
 }
