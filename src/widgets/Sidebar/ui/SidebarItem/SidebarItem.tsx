@@ -2,15 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import { SidebarItemType } from '../../model/Items';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
- item?: SidebarItemType;
+ item: SidebarItemType;
  collapsed: boolean;
 }
 
-export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
     return (
         <AppLink
@@ -26,4 +27,4 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
         </AppLink>
 
     );
-};
+});

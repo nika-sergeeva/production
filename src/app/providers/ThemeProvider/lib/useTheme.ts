@@ -5,7 +5,7 @@ import {
 
 interface UseThemeResult {
     toggleTheme: () => void;
-    theme: Theme | undefined;
+    theme: Theme;
 }
 
 export function useTheme(): UseThemeResult {

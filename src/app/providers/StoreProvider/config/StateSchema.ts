@@ -7,7 +7,8 @@ import {
 import { CombinedState } from 'redux';
 import { ProfileShema } from 'entities/Profile/model/types/profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
+import { To } from 'history';
+import { NavigateOptions } from 'react-router-dom';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -39,4 +40,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
+    state: StateSchema;
 }
