@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Profile } from '../../model/types/profile';
@@ -12,6 +11,9 @@ interface ProfileCardProps {
  data?: Profile;
  error?: string;
  isLoading?: boolean;
+ readonly?: boolean;
+ onChangeLastName: (value?: string) => void;
+ onChangeFirstName: (value?: string) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -20,6 +22,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
         data,
         isLoading,
         error,
+        readonly,
+        onChangeLastName,
+        onChangeFirstName,
     } = props;
     const { t } = useTranslation('profile');
 
@@ -52,11 +57,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     value={data?.first}
                     placeholder={t('Ваше имя')}
                     className={cls.input}
+                    onChange={onChangeFirstName}
+                    readonly={readonly}
                 />
                 <Input
                     value={data?.lastname}
                     placeholder={t('Ваша фамилия')}
                     className={cls.input}
+                    onChange={onChangeLastName}
+                    readonly={readonly}
                 />
             </div>
         </div>
