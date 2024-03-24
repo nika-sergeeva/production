@@ -6,6 +6,7 @@ import {
     fetchProfileData,
     getProfileData,
     getProfileError,
+    getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
     profileActions,
@@ -28,7 +29,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
-    const data = useSelector(getProfileData);
+    const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
@@ -41,6 +42,22 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ lastname: value || '' }));
     }, [dispatch]);
 
+    const onChangeCity = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ city: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAge = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ age: Number(value || '') }));
+    }, [dispatch]);
+
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    }, [dispatch]);
+
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
@@ -50,12 +67,16 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 <ProfileCard
-                    data={data}
+                    data={formData}
                     isLoading={isLoading}
                     error={error}
                     onChangeFirstName={onChangeFirstName}
                     onChangeLastName={onChangeLastName}
                     readonly={readonly}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeUsername={onChangeUsername}
                 />
             </div>
         </DynamicModuleLoader>
