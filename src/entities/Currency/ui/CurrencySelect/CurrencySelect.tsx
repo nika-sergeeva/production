@@ -12,8 +12,8 @@ interface CurrencySelectProps {
 }
 
 const options = [
-    { value: Currency.EUR, content: Currency.EUR },
     { value: Currency.RUB, content: Currency.RUB },
+    { value: Currency.EUR, content: Currency.EUR },
     { value: Currency.USD, content: Currency.USD },
 ];
 

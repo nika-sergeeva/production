@@ -18,6 +18,9 @@ export function useTheme(): UseThemeResult {
             newTheme = Theme.LIGHT;
             break;
         case Theme.LIGHT:
+            newTheme = Theme.OFFFPINK;
+            break;
+        case Theme.OFFFPINK:
             newTheme = Theme.DARK;
             break;
         default:
