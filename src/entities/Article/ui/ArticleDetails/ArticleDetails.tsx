@@ -1,10 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import {
@@ -17,7 +18,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
  className?: string;
- id:string;
+ id: string;
 }
 
 const reducers: ReducersList = {
@@ -40,7 +41,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <div>{t('Loading')}</div>
+            <div>
+                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton className={cls.title} width={300} height={40} />
+                <Skeleton className={cls.skeleton} width={200} height={130} />
+                <Skeleton className={cls.skeleton} width={600} height={70} />
+            </div>
         );
     } else if (error) {
         content = (
