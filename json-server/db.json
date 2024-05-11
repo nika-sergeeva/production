@@ -118,14 +118,27 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
+  "profile": [{
+    "id": "1",
     "first": "Veronika",
     "lastname": "Ser",
     "age": 100,
     "currency": "RUB",
-    "country": "EUR",
+    "country": "Russia",
     "city": "Moscow",
     "username": "admin",
     "avatar": "https://avatars.githubusercontent.com/u/72826720?v=4"
+  },
+  {
+    "id": "2",
+    "first": "John",
+    "lastname": "Doe",
+    "age": 100,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "jo",
+    "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
   }
+]
 }
