@@ -12,6 +12,7 @@ const data = {
     first: 'Ser',
     city: 'Moscow',
     currency: Currency.EUR,
+    id: '1',
 };
 
 jest.mock('axios');
